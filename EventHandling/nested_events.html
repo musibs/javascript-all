@@ -1,0 +1,26 @@
+<html>
+	<body>
+		<p>A <button>Button</button> within the paragraph</p>
+		<script>
+			let paragraph = document.querySelector("p");
+			let button = document.querySelector("button");
+			
+			paragraph.addEventListener("mousedown", () =>{
+				alert("Propagated Event");
+			});
+			
+			button.addEventListener("mousedown", event => {
+				if(event.button == 0){
+					alert("Left button");
+				}
+				else if(event.button == 1){
+					alert("Middle button");
+				}
+				else if(event.button == 2){
+					alert("Right button");
+					event.stopPropagation();
+				}
+			});
+		</script>
+	</body>
+</html>

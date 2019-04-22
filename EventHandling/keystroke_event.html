@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<p>This page changes to red if you press r</p>
+	</body>
+	<script>
+		window.addEventListener("keydown", event => {
+			if(event.key == "r"){
+				document.body.style.background = "red";
+			}
+		});
+		
+		window.addEventListener("keyup", event => {
+			if(event.key == "r"){
+				document.body.style.background = "";
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<button>Button A</button>
+		<button>Button B</button>
+		<button>Button C</button>
+		<script>
+			document.body.addEventListener("click", event => {
+				if(event.target.nodeName == "BUTTON"){
+					alert("You clicked "+event.target.textContent);
+				}
+			});
+		</script>
+	</body>
+</html>
