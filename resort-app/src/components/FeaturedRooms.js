@@ -6,10 +6,8 @@ export default class FeaturedRooms extends Component {
     render() {
         const { featuredRooms } = this.context;
         console.log(featuredRooms);
-        return (
-            <div>
-                hello from FeaturedRooms
-            </div>
+        return (<div>
+                hello from FeaturedRooms</div>
         )
     }
 }
