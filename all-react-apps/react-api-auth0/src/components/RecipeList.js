@@ -6,7 +6,7 @@ const RecipeList = props => {
     const API_ID = "8dc09389";
     const APP_KEY = "1674d16d7f2960217ac6957f8be3d6d8";
     const SEARCH_KEY = props.searchItem;
-    const RECIPE_LIST = "/recipeListPage";
+
 
     const [recipes, setRecipes] = useState([]);
 
@@ -14,7 +14,6 @@ const RecipeList = props => {
         loadData();
     }, []);
 
-    /* eslint no-restricted-globals :0*/
     const loadData= async () => {
         const response = await fetch(`https://api.edamam.com/search?q=${SEARCH_KEY}&app_id=${API_ID}&app_key=${APP_KEY}`);
         const data = await response.json();
@@ -22,7 +21,6 @@ const RecipeList = props => {
         const formattedRecipe = formatRecipe(data.hits);
         console.log(formattedRecipe);
         setRecipes(formattedRecipe);
-        location.pathname = RECIPE_LIST;
     }
 
     const formatRecipe = (recipes) => {

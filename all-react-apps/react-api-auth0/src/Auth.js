@@ -40,4 +40,16 @@ export default class Auth{
             }
         })
     }
+    
+    isAuthenticated(){
+        let expiresAt = localStorage.getItem("expires_at");
+        return new Date().getTime() < expiresAt;
+    }
+
+    logout(){
+        localStorage.removeItem("access_token");
+        localStorage.removeItem("id_token");
+        localStorage.removeItem("expires_at");
+        location.pathname= "/";
+    }
 }

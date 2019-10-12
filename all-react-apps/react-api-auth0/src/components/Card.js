@@ -1,11 +1,13 @@
 import React from 'react';
-import Item from './Item';
+import './Card.css';
 
 const Card = props => {
     return(
+          
         <div className="col-sm-3">
             <div className="card">
-                <Item itemName={props.itemName} searchItem={props.searchItem}/>
+                <img className="card-img-top img-fluid" src={props.itemName} alt="Card" onClick={() => props.onImageClick(props.searchItem)}/>
+                <h2 className="card-text">{props.searchItem.toUpperCase()}</h2>
             </div>
         </div>
     )

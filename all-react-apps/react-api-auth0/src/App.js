@@ -15,7 +15,7 @@ class App extends Component{
   render(){
     return(
     <div className="App">
-    <Header />
+    <Header auth={auth}/>
     <Router>
     <Switch>
       <Route exact path="/">
@@ -31,7 +31,7 @@ class App extends Component{
         <Main message="404 Page Not Found" showbutton="false"/>
       </Route>
       <Route exact path="/recipes">
-        <Recipe message="Welcome to recipes" showbutton="false"/>
+        <Recipe message="Welcome to recipes" showbutton="false" auth={auth}/>
       </Route>
       <Route exact path="/loginFailed">
         <Main message="Login Failed. Try Again" showbutton="true" auth={auth}/>

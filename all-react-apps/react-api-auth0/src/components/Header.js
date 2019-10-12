@@ -18,6 +18,10 @@ const Header = (props) => {
             <li className="nav-item">
               <a className="nav-link" href="/about">About</a>
             </li>
+            {props.auth.isAuthenticated() && 
+            <li className="nav-item">
+              <button className="nav-link btn btn-sm btn-primary" onClick={() => props.auth.logout()}>Logout</button>
+          </li>}
           </ul>
         </div>
       </nav>
