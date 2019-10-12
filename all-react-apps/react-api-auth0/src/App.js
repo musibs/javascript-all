@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
+import Callback from './components/Callback';
+import Auth from './Auth';
 
-function App() {
-  return (
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Recipe from './components/Recipe';
+
+const auth = new Auth()
+
+class App extends Component{
+
+  render(){
+    return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Header />
+    <Router>
+    <Switch>
+      <Route exact path="/">
+          <Main message="Welcome to RecipeMart.com" showbutton="true" auth={auth}/>
+      </Route>
+      <Route exact path="/about">
+        <Main message="Thank you for visiting us" showbutton="false"/>
+      </Route>
+      <Route exact path="/callback">
+        <Callback />
+      </Route>
+      <Route exact path="/notfound">
+        <Main message="404 Page Not Found" showbutton="false"/>
+      </Route>
+      <Route exact path="/recipes">
+        <Recipe message="Welcome to recipes" showbutton="false"/>
+      </Route>
+      <Route exact path="/loginFailed">
+        <Main message="Login Failed. Try Again" showbutton="true" auth={auth}/>
+      </Route>
+  </Switch>
+    </Router>
+  </div>
+    )
+  }
 }
-
 export default App;

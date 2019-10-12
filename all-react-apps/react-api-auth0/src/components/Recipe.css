@@ -1,0 +1,15 @@
+.row{
+    margin-top: 40px !important;
+}
+
+img{
+    height: 200px !important;
+}
+
+img:hover{
+   cursor: pointer;
+}
+
+button{
+    color: aqua !important;
+}
