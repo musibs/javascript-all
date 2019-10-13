@@ -13,7 +13,8 @@ import loading from '../images/generating.gif';
 import Main from './Main';
 import RecipeLineItem from './RecipeLineItem';
 
-
+const API_ID = "8dc09389";
+const APP_KEY = "1674d16d7f2960217ac6957f8be3d6d8";
 
 class Recipe extends Component{
 
